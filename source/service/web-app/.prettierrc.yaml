@@ -1,0 +1,21 @@
+# documentation: https://prettier.io/docs/en/
+# reference: https://prettier.io/docs/en/options
+# blog: https://itnext.io/configure-prettier-and-eslint-with-angular-e7b4ce979cd8
+useTabs: false
+tabWidth: 2
+endOfLine: crlf
+singleQuote: true
+semi: true
+bracketSpacing: true
+arrowParens: always
+trailingComma: all
+bracketSameLine: false
+printWidth: 100
+proseWrap: preserve
+embeddedLanguageFormatting: off
+overrides:
+  - files:
+      - "**/*.yaml"
+      - "**/*.yml"
+    options:
+      singleQuote: false

@@ -1,0 +1,30 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Prettier will follow rules specified in .gitignore if it exists in the same directory from which it is run.
+
+# misc
+.eslintcache
+*.swp
+*~
+**/.sass-cache
+**/coverage
+**/build
+**/.yarn
+**/.pnp.*
+**/typings
+*.log
+
+# Lock files
+**/pnpm-lock.yaml
+**/package-lock.json
+**/yarn.lock
+
+# Config files
+**/angular.json
+**/playwright.config.ts
+**/tsconfig.app.json
+**/tsconfig.json
+**/tsconfig.spec.json
+
+# Custom files
+**/styles/main.scss

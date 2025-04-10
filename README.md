@@ -48,20 +48,21 @@ The application is aimed at anyone who wants to effectively learn using flashcar
 ## Tech Stack
 
 ### Frontend
-- **Angular 18** - latest version for building web applications
-- **PrimeNG 19** with Tailwind CSS - for UI components and styling
+- **Angular 18.1** - latest version for building web applications
+- **PrimeNG 19** with Tailwind CSS 4.1 - for UI components and styling
+- **SCSS** for component styling
 
 ### Backend
 - **Supabase** as a Backend-as-a-Service solution:
-  - PostgreSQL database
-  - Built-in user authentication
-  - SDK for Angular
-  - Open-source solution that can be self-hosted
+    - PostgreSQL database
+    - Built-in user authentication
+    - SDK for Angular
+    - Open-source solution that can be self-hosted
 
 ### AI
 - Communication with LLM models:
-  - Access to language models running on Ollama in a Docker container
-  - Support for models like Mistral 7B Instruct, Gemma 7B Instruct, Phi-3 Mini
+    - Access to language models running on Ollama in a Docker container
+    - Support for models like Mistral 7B Instruct, Gemma 7B Instruct, Phi-3 Mini
 
 ### CI/CD & Hosting
 - **GitHub Actions** for CI/CD pipelines
@@ -72,7 +73,7 @@ The application is aimed at anyone who wants to effectively learn using flashcar
 ### Prerequisites
 
 - Node.js (v18+)
-- pnpm (recommended) or npm (v10+)
+- pnpm 9.15.4 (strongly recommended, project is configured to use pnpm only)
 - Docker and Docker Compose
 - Git
 
@@ -86,55 +87,51 @@ The application is aimed at anyone who wants to effectively learn using flashcar
 
 2. Install dependencies
    ```bash
-   # Recommended: Using pnpm
+   # Project is configured to use pnpm only
    pnpm install
-   
-   # Alternative: Using npm
-   npm install
    ```
 
 3. Configure Supabase
-   - Create a Supabase account or set up a local Supabase instance
-   - Create a new project in Supabase
-   - Set up the database schema according to the project requirements
-   - Create an `.env` file with your Supabase credentials
+    - Create a Supabase account or set up a local Supabase instance
+    - Create a new project in Supabase
+    - Set up the database schema according to the project requirements
+    - Create an `.env` file with your Supabase credentials
    ```
    SUPABASE_URL=your_supabase_url
    SUPABASE_KEY=your_supabase_anon_key
    ```
 
 4. Configure Ollama with Docker
-   - Pull and run the Ollama Docker image
+    - Pull and run the Ollama Docker image
    ```bash
    docker pull ollama/ollama
    docker run -d --name ollama -p 11434:11434 ollama/ollama
    ```
-   - Download the required models
+    - Download the required models
    ```bash
    docker exec -it ollama ollama pull mistral:7b-instruct
    docker exec -it ollama ollama pull gemma:7b-instruct
    docker exec -it ollama ollama pull phi3:mini
    ```
 
+   Alternatively, you can use the provided Docker Compose setup when available.
+
 5. Start the development server
    ```bash
-   # Using pnpm
    pnpm start
-   
-   # Or using npm
-   npm start
    ```
 
 6. Open your browser and navigate to `http://localhost:4200`
 
 ## Available Scripts
 
-Commands can be run with either pnpm (recommended) or npm:
+Commands can be run with pnpm (strongly recommended):
 
 - `pnpm start` - Starts the development server using Angular CLI
 - `pnpm run build` - Builds the application for production
 - `pnpm run watch` - Builds and watches for changes in development mode
 - `pnpm test` - Runs unit tests using Karma and Jasmine
+- `pnpm run lint` - Runs prettier to format code
 
 ## Project Scope
 
